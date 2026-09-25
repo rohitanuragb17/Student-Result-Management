@@ -1,0 +1,1 @@
+</main><footer class="site-footer"><div class="footer-inner"><span>Student Result Management <i>&middot; Quiet, deliberate academic records.</i></span><span class="footer-role"><c:out value="${user.role}"/> portal</span></div></footer></body></html>

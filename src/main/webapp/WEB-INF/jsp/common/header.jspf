@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fdfaf6"><title><c:out value="${title}"/> | Student Results</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/style.css?v=3"></head><body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="${pageContext.request.contextPath}/dashboard"><span class="brand-mark">SR</span><span class="brand-copy">Student Result<small>Management</small></span></a>
+  <nav class="nav" aria-label="Main navigation"><a class="nav-link ${activeSection == 'dashboard' ? 'active' : ''}" href="${pageContext.request.contextPath}/dashboard" ${activeSection == 'dashboard' ? 'aria-current="page"' : ''}>Dashboard</a>
+    <c:choose><c:when test="${user.role == 'STUDENT'}"><a class="nav-link ${activeSection == 'my-results' ? 'active' : ''}" href="${pageContext.request.contextPath}/my-results" ${activeSection == 'my-results' ? 'aria-current="page"' : ''}>My results</a></c:when>
+    <c:otherwise><a class="nav-link ${activeSection == 'students' ? 'active' : ''}" href="${pageContext.request.contextPath}/students" ${activeSection == 'students' ? 'aria-current="page"' : ''}>Students</a><a class="nav-link ${activeSection == 'results' ? 'active' : ''}" href="${pageContext.request.contextPath}/results" ${activeSection == 'results' ? 'aria-current="page"' : ''}>Results</a>
+      <c:if test="${user.role == 'ADMIN'}"><a class="nav-link ${activeSection == 'users' ? 'active' : ''}" href="${pageContext.request.contextPath}/users" ${activeSection == 'users' ? 'aria-current="page"' : ''}>Users</a></c:if>
+    </c:otherwise></c:choose></nav>
+  <div class="account-actions"><span class="profile"><span class="avatar"><c:out value="${initials}"/></span><span><strong><c:out value="${firstName}"/></strong><small><c:out value="${user.role}"/></small></span></span>
+  <form class="logout-form" method="post" action="${pageContext.request.contextPath}/logout"><input type="hidden" name="csrf" value="<c:out value='${csrf}'/>"><button class="logout" type="submit">Sign out</button></form></div>
+</div></header><main class="container">
