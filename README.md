@@ -8,4 +8,3 @@ A beginner-friendly Java Servlet/JSP/JDBC project for managing student records a
 - Full create, read, update, delete flows for student details and marks.
 - Searchable result archive, automatic grade/pass calculation, grouped printable report card.
 - H2 file database through JDBC prepared statements; passwords hashed with PBKDF2.
-- Server-side validation, container-managed sessions, CSRF tokens, output escaping, and role/ownership checks.
